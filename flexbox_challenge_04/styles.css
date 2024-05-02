@@ -1,0 +1,55 @@
+:root{
+  --hero-clr: #F3EED9;
+  --white: #FFF;
+  --forest-clr: #222C2A;
+  --burnt-clr: #824936;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+}
+
+.hero{
+  background: var(--hero-clr);
+  color: var(--burnt-clr);
+}
+
+.para{}
+
+.hero-para{}
+
+.heading{}
+
+.hero-heading{}
+
+.main{
+  background: var(white);
+}
+
+.section{}
+
+.section-one{}
+
+.section-two{
+  background: var(--forest-clr);
+  color: var(--white);
+}
+
+.section-three{
+  background: var(--burnt-clr);
+  color: var(--white);
+}
+
+.heading_two{}
+
+.section-para{}
+
+.image{}
+
+.section-image{}

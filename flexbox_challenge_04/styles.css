@@ -11,7 +11,7 @@
   box-sizing: border-box;
 }
 
-html, body {
+html, body, p, h1, h2, main, section {
   padding: 0;
   margin: 0;
 }
@@ -24,25 +24,70 @@ img{
   padding: 0;
 }
 
+.center{
+  text-align: center;
+}
+
 .hero{
   background: var(--hero-clr);
   color: var(--burnt-clr);
+  padding: 5rem 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.para{}
+.hero-article{
+  max-width: 800px ;
+}
 
-.hero-para{}
+.para{
+  font: 1.25rem "Roboto", sans-serif;
+}
 
-.heading{}
+.hero-para{
+    color: #000;
 
-.hero-heading{}
+}
+
+.heading{
+}
+
+.hero-heading{
+  font: 900 3.75rem "Playfair Display", serif;
+}
 
 .main{
 }
 
-.section{}
+.section{
+  display: flex;
+  flex-direction: column;
+  padding: 25px 15px;
+  align-items: center;
+}
+
+.section-content{
+  display: flex;
+  flex-direction: row;
+  padding: 1.5rem 5rem 5rem;
+  justify-content: center;
+  justify-content: space-between;
+}
+
+.section-content-three{
+  flex-direction: row-reverse;
+}
+
+.section-content > *{
+  margin: 0 2rem;
+}
 
 .section-one{}
+
+.section-one > .heading_two{
+  color: var(--burnt-clr);
+}
 
 .section-two{
   background: var(--forest-clr);
@@ -54,11 +99,33 @@ img{
   color: var(--white);
 }
 
-.heading_two{}
-
-.section-para{}
-
-.image{
+.heading_two{
+  font: 900 2.3rem "Playfair Display", serif;
 }
 
-.section-image{}
+.para{
+  font-size: 1.32rem;
+  font-weight: 300;
+}
+
+.section-content-container{
+  max-width: 950px;
+  flex-grow: 1;
+}
+
+.section-image{
+  flex-grow: 0;
+  width: 450px;
+}
+
+.section-para-two, .section-para-three{
+  padding: 1.5rem 0;
+}
+
+
+
+
+
+
+
+

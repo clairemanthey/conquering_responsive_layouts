@@ -1,9 +1,13 @@
-:root{
-  --hero-clr: #F3EED9;
-  --white: #FFF;
-  --forest-clr: #222C2A;
-  --burnt-clr: #824936;
-}
+/* Challenge
+
+   Make the navigation layout work
+   on both mobile and large screens.
+
+   Mobile-first, so mobile styles first,
+   then add the large screen styles
+   inside the existing media query
+
+*/
 
 *,
 *::before,
@@ -11,123 +15,211 @@
   box-sizing: border-box;
 }
 
-html, body, p, h1, h2, main, section {
-  padding: 0;
+body {
   margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.3rem;
 }
 
-img{
+img {
   max-width: 100%;
-  display: block;
-  outline: none;
-  margin: 0;
-  padding: 0;
 }
 
-.center{
+h1 {
+  font-size: 3rem;
+  margin-top: 0;
+}
+
+li {
+  list-style-type: none;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.section-title {
+  color: #87629a;
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #23424a;
+  font-weight: 900;
+  background-color: #38cfd9;
+  padding: 0.75em 2em;
+  border-radius: 100px;
+}
+
+.btn:hover,
+.btn:focus {
+  opacity: 0.75;
+}
+
+.container {
+  width: 80%;
+  max-width: 1100px;
+  margin: 0 auto;
+  /* added for nav-toggle positioning */
+  position: relative;
+}
+
+header {
+  background: #136c72;
+  padding: 1em 0;
   text-align: center;
 }
 
-.hero{
-  background: var(--hero-clr);
-  color: var(--burnt-clr);
-  padding: 5rem 6rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.hero-article{
-  max-width: 800px ;
-}
-
-.para{
-  font: 1.25rem "Roboto", sans-serif;
-}
-
-.hero-para{
-  color: #000;
-  letter-spacing: 6px;
-  text-transform: uppercase;
+.logo-container{
+  border: 2px solid red;
 
 }
 
-.heading{
+.nav {
+  width: 100%;
 }
 
-.hero-heading{
-  font: 900 3.75rem "Playfair Display", serif;
+.nav-toggle {
+  cursor: pointer;
+  border: 0;
+  width: 3rem;
+  height: 3rem;
+  padding: 0em;
+  border-radius: 50%;
+  background: #072a2d;
+  color: white;
+  transition: opacity 250ms ease;
+
+  position: absolute;
+  left: 0;
 }
 
-.main{
+.nav-toggle:focus,
+.nav-toggle:hover {
+  opacity: 0.75;
 }
 
-.section{
-  display: flex;
-  flex-direction: column;
-  padding: 25px 15px;
-  align-items: center;
+.hamburger {
+  width: 50%;
+  position: relative;
 }
 
-.section-content{
-  display: flex;
-  flex-direction: row;
-  padding: 1.5rem 5rem 5rem;
-  justify-content: center;
-  justify-content: space-between;
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  display: block;
+  margin: 0 auto;
+  height: 3px;
+  background: white;
 }
 
-.section-content-three{
-  flex-direction: row-reverse;
+.hamburger::before,
+.hamburger::after {
+  content: "";
+  width: 100%;
 }
 
-.section-content > *{
-  margin: 0 2rem;
+.hamburger::before {
+  transform: translateY(-6px);
 }
 
-.section-one{}
-
-.section-one > .heading_two{
-  color: var(--burnt-clr);
+.hamburger::after {
+  transform: translateY(3px);
 }
 
-.section-two{
-  background: var(--forest-clr);
-  color: var(--white);
+/* made changes here from video
+   to make it more accessible.
+   
+   Works the same :) */
+/*
+.nav {
+  visibility: hidden;
+  height: 0;
+  position: absolute;
+}
+*/
+
+.nav--visible {
+  visibility: visible;
+  height: auto;
+  position: relative;
 }
 
-.section-three{
-  background: var(--burnt-clr);
-  color: var(--white);
+.nav__link {
+  color: #fff;
 }
 
-.heading_two{
-  font: 900 2.3rem "Playfair Display", serif;
+.nav__link--button {
+  border: 2px solid red;
+  border-radius: 50px;
+  padding: 5px 15px;
+  color: #136c72;
+  background: #fff;
+  margin: 120px 0;
 }
 
-.para{
-  font-size: 1.1rem;
-  font-weight: 300;
+.logo {
+  height: 30px;
 }
 
-.section-content-container{
-  max-width: 950px;
-  flex-grow: 1;
+.hero {
+  padding: 100px 0;
+  background-color: #23424a;
+  color: #fff;
 }
 
-.section-image{
-  flex-grow: 0;
-  width: 450px;
+.hero__img {
+  margin-top: 2em;
 }
 
-.section-para-two, .section-para-three{
-  padding: 1.5rem 0;
+.hero p {
+  margin-bottom: 3em;
 }
 
+.main {
+  margin-top: 3em;
+}
 
+.sidebar {
+  padding: 1em;
+  text-align: center;
+  color: #fff;
+  background-color: #136c72;
+}
 
+@media (min-width: 800px) {
+  .nav-toggle {
+    display: none;
+  }
 
+  .nav {
+    visibility: visible;
+    display: flex;
+  }
 
+  .row {
+    display: flex;
+    justify-content: space-between;
+  }
 
+  .hero__text {
+    width: 62%;
+  }
 
+  .hero__img {
+    width: 32%;
+    align-self: flex-start;
+    margin: 0;
+  }
 
+  .primary-content {
+    width: 62%;
+  }
+
+  .sidebar {
+    width: 32%;
+  }
+}
